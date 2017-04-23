@@ -1,0 +1,25 @@
+@import '../../../styles/variables/media';
+
+.card {
+  width:300px!important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  @media screen and (min-width: $desktop_width) {
+    width:500px!important;
+  }
+  @media screen and (min-width: $tablet_width) {
+    width:500px!important;
+  }
+}
+
+.home-grid {
+  margin-top: 100px!important;
+}
+
+.segment {
+  font-size: 30px!important;
+  text-align: left;
+  line-height: 1.42em;
+}
