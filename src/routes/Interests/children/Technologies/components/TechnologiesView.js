@@ -8,7 +8,7 @@ import './TechnologiesView.scss'
 
 const technologies = [
   { key: 0, name: 'React', image: ReactImage },
-  { key: 1, name: 'Elm'  , image: ElmImage   },
+  { key: 1, name: 'Elm', image: ElmImage },
   { key: 2, name: 'Elixir' },
   { key: 3, name: 'Python' }
 ]

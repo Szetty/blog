@@ -45,10 +45,10 @@ div.mobile-search {
 .background {
   background: linear-gradient(270deg, #C8C8C8, #EAEAEA);
   background-size: 400% 400%;
-  -webkit-animation: AnimationName 30s ease infinite;
-  -moz-animation: AnimationName 30s ease infinite;
-  -o-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
+  //-webkit-animation: AnimationName 30s ease infinite;
+  //-moz-animation: AnimationName 30s ease infinite;
+  //-o-animation: AnimationName 30s ease infinite;
+  //animation: AnimationName 30s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
