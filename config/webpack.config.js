@@ -187,8 +187,13 @@ webpackConfig.module.loaders.push(
   { test: /\.eot(\?.*)?$/,   loader: 'file?prefix=fonts/&name=[path][name].[ext]' },
   { test: /\.svg(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=image/svg+xml' },
   { test: /\.(png|jpg)$/,    loader: 'url?limit=8192' },
-  { test: /\.(txt)$/,        loader: 'raw-loader' }
+  { test: /\.(txt)$/,        loader: 'raw-loader' },
+  { test: /\.styl$/,         loader: 'style!css!stylus'}
 )
+
+webpackConfig.module.rules = [
+  { test: /\.json$/, use: 'json-loader'}
+]
 /* eslint-enable */
 
 // ------------------------------------

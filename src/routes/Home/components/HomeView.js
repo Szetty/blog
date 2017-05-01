@@ -3,15 +3,14 @@ import Arnold from '../assets/Arnold.jpg'
 import Text from '../assets/text1.txt'
 import './HomeView.scss'
 import { Card, Grid, Image, Segment } from 'semantic-ui-react'
-import MediaQuery from 'react-responsive'
-import { MEDIA_QUERIES } from '../../../store/constants'
+import MediaQueryWrapper, { MediaQueryTypes } from '../../../components/MediaQueryWrapper'
 import BadgesWrapper from './BadgesWrapper'
 
 export const HomeView = () => (
   <div>
-    <MediaQuery query={MEDIA_QUERIES.desktop}>
+    <MediaQueryWrapper type={MediaQueryTypes.desktop}>
       <BadgesWrapper />
-    </MediaQuery>
+    </MediaQueryWrapper>
     <section style={sectionStyle}>
       <Card className='card'>
         <Image src={Arnold} />
@@ -32,7 +31,7 @@ export const HomeView = () => (
     </section>
     <section style={sectionStyle}>
       <div className='home-grid'>
-        <h1>Why to blog?</h1>
+        <h1 style={titleStyle}>Why to blog?</h1>
         <Grid stackable columns={2}>
           <Grid.Column>
             <Segment className='segment'>
@@ -54,4 +53,8 @@ export default HomeView
 
 const sectionStyle = {
   height: '93vh'
+}
+
+const titleStyle = {
+  textAlign: 'center'
 }

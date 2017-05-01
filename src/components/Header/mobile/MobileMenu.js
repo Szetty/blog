@@ -8,6 +8,7 @@ export const MobileMenu = ({ show, toggleMenu }) => {
       <MenuWrapper vertical
         className='mobile-menu header-background'
         toggleMenu={toggleMenu}
+        onBlur={toggleMenu}
       />
     )
   } else {

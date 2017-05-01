@@ -1,0 +1,26 @@
+{
+  "born": {
+    "date": "27/06/1993",
+    "city": "Târgu Mureș",
+    "country": "Romania"
+  },
+  "name": "Szederjesi Arnold",
+  "sex": "male",
+  "nationality": "Hungarian",
+  "highSchool": {
+    "name": "Bolyai Farkas Theoretical High School",
+    "city": "Târgu Mureș",
+    "period": "2008-2012"
+  },
+  "bachelor": {
+    "name": "University of Babeş-Bolyai",
+    "city": "Cluj-Napoca",
+    "period": "2012-2015"
+  },
+  "employed": true,
+  "relationship": {
+    "status": "engaged",
+    "with": "Andra Dragomir",
+    "description": "I <3 Andra !!!"
+  }
+}

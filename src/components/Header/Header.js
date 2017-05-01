@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import './Header.scss'
-import MediaQuery from 'react-responsive'
+import MediaQueryWrapper, { MediaQueryTypes } from '../../components/MediaQueryWrapper'
 import MobileHeader from './mobile/MobileHeader'
 import MobileMenu from './mobile/MobileMenu'
 import MenuWrapper from './menu/MenuWrapper'
-import { MEDIA_QUERIES } from '../../store/constants'
 import BreadcrumbWrapper from './breadcrumb/BreadcrumbWrapper'
 
 export default class Header extends Component {
@@ -25,17 +24,21 @@ export default class Header extends Component {
   render () {
     return (
       <div style={headerStyle}>
-        <MediaQuery query={MEDIA_QUERIES.tablet}>
+        <MediaQueryWrapper type={MediaQueryTypes.mobile_and_tablet}>
           <MobileHeader
             toggleMenu={this.toggleMenu}
             searchClassName='mobile-search'
           />
           <MobileMenu toggleMenu={this.toggleMenu} show={this.state.isMobileMenuTriggered} />
-        </MediaQuery>
-        <MediaQuery query={MEDIA_QUERIES.desktop}>
+        </MediaQueryWrapper>
+        <MediaQueryWrapper type={MediaQueryTypes.desktop}>
           <MenuWrapper className='header-background desktop-header' searchClassName='desktop-search' />
-          {(this.router.routes.filter(route => route.path).length > 1) ? (<BreadcrumbWrapper />) : null }
-        </MediaQuery>
+        </MediaQueryWrapper>
+        {(this.router.routes.filter(route => route.path).length > 1) ? (
+          <MediaQueryWrapper type={MediaQueryTypes.tablet_and_desktop}>
+            <BreadcrumbWrapper />
+          </MediaQueryWrapper>
+        ) : null }
       </div>
     )
   }

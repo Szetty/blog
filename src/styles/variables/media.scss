@@ -1,8 +1,12 @@
-$mobile_width:375px;
-$tablet_width:768px;
-$desktop_width:1225px;
+$mobile_min_width:0;
+$mobile_max_width:775px;
+$tablet_min_width:$mobile_max_width + 1;
+$tablet_max_width:1224px;
+$desktop_min_width:$tablet_max_width + 1;
 :export {
-  mobile_width: $mobile_width;
-  tablet_width: $tablet_width;
-  desktop_width: $desktop_width;
+  mobileMinWidth: $mobile_min_width;
+  mobileMaxWidth: $mobile_max_width;
+  tabletMinWidth: $tablet_min_width;
+  tabletMaxWidth: $tablet_max_width;
+  desktopMinWidth: $desktop_min_width;
 }

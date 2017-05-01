@@ -23,7 +23,7 @@ export default class BreadcrumbWrapper extends Component {
   render () {
     return (
       <div style={breadcrumbContainerStyle} className='background'>
-        <Breadcrumb icon='right chevron' sections={this.buildSections()} />
+        <Breadcrumb style={breadCrumbStyle} icon='right chevron' sections={this.buildSections()} />
       </div>
     )
   }
@@ -32,6 +32,10 @@ export default class BreadcrumbWrapper extends Component {
 const breadcrumbContainerStyle = {
   width: '100%',
   height: '3vh'
+}
+
+const breadCrumbStyle = {
+  fontSize: '2.5vh'
 }
 
 BreadcrumbWrapper.contextTypes = {

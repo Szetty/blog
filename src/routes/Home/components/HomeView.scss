@@ -1,25 +1,20 @@
 @import '../../../styles/variables/media';
 
 .card {
-  width:300px!important;
+  width:58vh!important;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  @media screen and (min-width: $desktop_width) {
-    width:500px!important;
-  }
-  @media screen and (min-width: $tablet_width) {
-    width:500px!important;
-  }
-}
-
-.home-grid {
-  margin-top: 100px!important;
 }
 
 .segment {
-  font-size: 30px!important;
-  text-align: left;
+  @media screen and (min-width: $desktop_min_width) {
+    font-size: 3.4vh!important;
+  }
+  @media screen and (min-width: $tablet_min_width) and (max-width: $tablet_max_width){
+    font-size: 24px!important;
+  }
+  text-align: justify;
   line-height: 1.42em;
 }

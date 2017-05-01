@@ -1,17 +1,10 @@
 import React from 'react'
-import ReactImage from '../assets/react.png'
-import ElmImage from '../assets/elm.png'
 import Paper from 'material-ui/Paper'
 import colors from '../../../../../styles/variables/colors.scss'
 import { Grid, Image } from 'semantic-ui-react'
 import './TechnologiesView.scss'
-
-const technologies = [
-  { key: 0, name: 'React', image: ReactImage },
-  { key: 1, name: 'Elm', image: ElmImage },
-  { key: 2, name: 'Elixir' },
-  { key: 3, name: 'Python' }
-]
+import technologies from '../technologies'
+import MediaQueryWrapper, { MediaQueryTypes } from '../../../../../components/MediaQueryWrapper'
 
 export const TechnologiesView = () => (
   <div>
@@ -19,10 +12,20 @@ export const TechnologiesView = () => (
       (
         <Paper key={technology.key} style={buildPaperStyle(technology)} zDepth={5}>
           <div style={{ padding: '25px 35px' }}>
-            <h1>{technology.name}</h1>
-            <Grid columns={2}>
-              { (technology.key % 2 === 0) ? leftAlignedRow(technology) : rightAlignedRow(technology) }
-            </Grid>
+            <h1>
+              <a href={technology.link} target='_blank'>{technology.name}</a>
+            </h1>
+            <MediaQueryWrapper type={MediaQueryTypes.mobile}>
+              {image(technology)}
+            </MediaQueryWrapper>
+            <MediaQueryWrapper type={MediaQueryTypes.tablet}>
+              {text(technology)}
+            </MediaQueryWrapper>
+            <MediaQueryWrapper type={MediaQueryTypes.desktop}>
+              <Grid stackable columns={2}>
+                { (technology.key % 2 === 0) ? leftAlignedRow(technology) : rightAlignedRow(technology) }
+              </Grid>
+            </MediaQueryWrapper>
           </div>
         </Paper>
       )
@@ -46,14 +49,25 @@ const rightAlignedRow = (technology) => (
 
 const imageColumn = (technology) => (
   <Grid.Column width={2}>
-    {(technology.image) ? (<Image style={imageStyle} src={technology.image} />) : null}
+    {image(technology)}
   </Grid.Column>
 )
 
 const textColumn = (technology) => (
   <Grid.Column width={14}>
-    sdfdsfds
+    {text(technology)}
   </Grid.Column>
+)
+
+const image = (technology) => {
+  const floatStyle = (technology.key % 2 === 0) ? 'left' : 'right'
+  return (
+    <Image style={{ float: floatStyle, ...imageStyle }} src={technology.image} />
+  )
+}
+
+const text = (technology) => (
+  <p style={textStyle}>{technology.text}</p>
 )
 
 const buildPaperStyle = (technology) => {
@@ -84,6 +98,12 @@ const rightStyle = {
 const imageStyle = {
   width: '30vh',
   maxHeight: '25vh'
+}
+
+const textStyle = {
+  textAlign: 'left',
+  fontWeight: 'bold',
+  fontSize: '2vmin'
 }
 
 export default TechnologiesView
