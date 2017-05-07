@@ -1,0 +1,17 @@
+.ui.comments {
+  margin: auto;
+  text-align: left;
+  padding-bottom: 5vh;
+}
+
+.ui.embed > img, .ui.embed > i, .ui.embed iframe {
+  width: 50vw !important;
+  height: 60vh !important;
+}
+
+.ui.embed {
+  width: 50vw;
+  margin: auto;
+  padding-bottom: 65vh;
+  background-color: inherit;
+}

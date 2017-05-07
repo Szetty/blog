@@ -8,9 +8,9 @@ import MediaQueryWrapper, { MediaQueryTypes } from '../../../../../components/Me
 
 export const TechnologiesView = () => (
   <div>
-    {technologies.map(technology =>
+    {technologies.map((technology, index) =>
       (
-        <Paper key={technology.key} style={buildPaperStyle(technology)} zDepth={5}>
+        <Paper key={index} style={buildPaperStyle(technology)} zDepth={5}>
           <div style={{ padding: '25px 35px' }}>
             <h1>
               <a href={technology.link} target='_blank'>{technology.name}</a>

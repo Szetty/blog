@@ -1,0 +1,19 @@
+@import "../../../styles/variables/media";
+
+@media screen and (min-width: $desktop_min_width) {
+  #json-pretty {
+    width: 45vw;
+  }
+}
+
+@media screen and (min-width: $tablet_min_width) and (max-width: $tablet_max_width) {
+  #json-pretty {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: $mobile_max_width) {
+  #json-pretty {
+    width: 100vw;
+  }
+}

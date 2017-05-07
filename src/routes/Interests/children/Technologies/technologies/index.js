@@ -3,11 +3,6 @@ import elm from './elm'
 import elixir from './elixir'
 import python from './python'
 
-const technologies = [
-  { key: 0, ...react },
-  { key: 1, ...elixir },
-  { key: 2, ...python },
-  { key: 3, ...elm }
-]
+const technologies = [react, elixir, python, elm]
 
 export default technologies

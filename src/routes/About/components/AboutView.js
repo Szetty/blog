@@ -12,7 +12,6 @@ export const AboutView = () => (
 
 const jsonPrettyStyle = {
   textAlign: 'left',
-  width: '52vh',
   margin: 'auto'
 }
 
