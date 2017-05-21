@@ -3,14 +3,11 @@ import Arnold from '../assets/Arnold.jpg'
 import Text from '../assets/text1.txt'
 import './HomeView.scss'
 import { Card, Grid, Image, Segment } from 'semantic-ui-react'
-import MediaQueryWrapper, { MediaQueryTypes } from '../../../components/MediaQueryWrapper'
 import BadgesWrapper from './BadgesWrapper'
 
 export const HomeView = () => (
   <div>
-    <MediaQueryWrapper type={MediaQueryTypes.desktop}>
-      <BadgesWrapper />
-    </MediaQueryWrapper>
+    <BadgesWrapper />
     <section style={sectionStyle}>
       <Card className='card'>
         <Image src={Arnold} />
@@ -24,7 +21,8 @@ export const HomeView = () => (
             </span>
           </Card.Meta>
           <Card.Description>
-            Arnold is a programmer living in Cluj-Napoca.
+            Arnold is a programmer living in Cluj-Napoca, Romania
+            <i className='ro flag' style={flagStyle} />
           </Card.Description>
         </Card.Content>
       </Card>
@@ -57,4 +55,8 @@ const sectionStyle = {
 
 const titleStyle = {
   textAlign: 'center'
+}
+
+const flagStyle = {
+  marginLeft: '5px'
 }

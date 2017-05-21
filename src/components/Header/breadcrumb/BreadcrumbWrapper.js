@@ -35,7 +35,7 @@ const breadcrumbContainerStyle = {
 }
 
 const breadCrumbStyle = {
-  fontSize: '2.5vh'
+  fontSize: '2vh'
 }
 
 BreadcrumbWrapper.contextTypes = {

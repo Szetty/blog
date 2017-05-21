@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import './Header.scss'
 import MediaQueryWrapper, { MediaQueryTypes } from '../../components/MediaQueryWrapper'
+import MediaQuery from 'react-responsive'
 import MobileHeader from './mobile/MobileHeader'
 import MobileMenu from './mobile/MobileMenu'
 import MenuWrapper from './menu/MenuWrapper'
 import BreadcrumbWrapper from './breadcrumb/BreadcrumbWrapper'
+import breakPoints from '../../styles/variables/media.scss'
 
 export default class Header extends Component {
   constructor (props, context) {
@@ -35,9 +37,9 @@ export default class Header extends Component {
           <MenuWrapper className='header-background desktop-header' searchClassName='desktop-search' />
         </MediaQueryWrapper>
         {(this.router.routes.filter(route => route.path).length > 1) ? (
-          <MediaQueryWrapper type={MediaQueryTypes.tablet_and_desktop}>
+          <MediaQuery minWidth={breakPoints.tabletMinWidth} minHeight={900}>
             <BreadcrumbWrapper />
-          </MediaQueryWrapper>
+          </MediaQuery>
         ) : null }
       </div>
     )

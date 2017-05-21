@@ -18,8 +18,7 @@ export const PAGES = [
   { route: Interests, children: interestsChildren, path: baseName + '/interests', name: 'Interests' },
   { route: Posts, children: [], path: baseName + '/posts', name: 'Posts' },
   { route: null, children: [], path: baseName + '/life', name: 'Life' },
-  { route: null, children: [], path: baseName + '/tutorials', name: 'Tutorials' },
-  { route: null, children: [], path: baseName + '/apps', name: 'Applications I use' }
+  { route: null, children: [], path: baseName + '/tutorials', name: 'Tutorials' }
 ]
 
 // For mobile header title
@@ -29,5 +28,6 @@ pageNames[baseName + '/interests'] = 'INTERESTS'
 pageNames[baseName + '/interests/hobbies'] = 'HOBBIES'
 pageNames[baseName + '/interests/technologies'] = 'TECHNOLOGIES'
 pageNames[baseName + '/about'] = 'ABOUT ME'
+pageNames[baseName + '/posts'] = 'POSTS'
 
 export const PAGE_NAME_BY_PATH = pageNames

@@ -10,20 +10,20 @@ export const TechnologiesView = () => (
   <div>
     {technologies.map((technology, index) =>
       (
-        <Paper key={index} style={buildPaperStyle(technology)} zDepth={5}>
+        <Paper key={index} style={buildPaperStyle(technology, index)} zDepth={5}>
           <div style={{ padding: '25px 35px' }}>
             <h1>
               <a href={technology.link} target='_blank'>{technology.name}</a>
             </h1>
             <MediaQueryWrapper type={MediaQueryTypes.mobile}>
-              {image(technology)}
+              {image(technology, (index % 2 === 0))}
             </MediaQueryWrapper>
             <MediaQueryWrapper type={MediaQueryTypes.tablet}>
               {text(technology)}
             </MediaQueryWrapper>
             <MediaQueryWrapper type={MediaQueryTypes.desktop}>
               <Grid stackable columns={2}>
-                { (technology.key % 2 === 0) ? leftAlignedRow(technology) : rightAlignedRow(technology) }
+                { (index % 2 === 0) ? leftAlignedRow(technology) : rightAlignedRow(technology) }
               </Grid>
             </MediaQueryWrapper>
           </div>
@@ -35,7 +35,7 @@ export const TechnologiesView = () => (
 
 const leftAlignedRow = (technology) => (
   <Grid.Row>
-    {imageColumn(technology)}
+    {imageColumn(technology, true)}
     {textColumn(technology)}
   </Grid.Row>
 )
@@ -43,13 +43,13 @@ const leftAlignedRow = (technology) => (
 const rightAlignedRow = (technology) => (
   <Grid.Row>
     {textColumn(technology)}
-    {imageColumn(technology)}
+    {imageColumn(technology, false)}
   </Grid.Row>
 )
 
-const imageColumn = (technology) => (
+const imageColumn = (technology, isLeft) => (
   <Grid.Column width={2}>
-    {image(technology)}
+    {image(technology, isLeft)}
   </Grid.Column>
 )
 
@@ -59,8 +59,8 @@ const textColumn = (technology) => (
   </Grid.Column>
 )
 
-const image = (technology) => {
-  const floatStyle = (technology.key % 2 === 0) ? 'left' : 'right'
+const image = (technology, isLeft) => {
+  const floatStyle = (isLeft) ? 'left' : 'right'
   return (
     <Image style={{ float: floatStyle, ...imageStyle }} src={technology.image} />
   )
@@ -70,8 +70,8 @@ const text = (technology) => (
   <p style={textStyle}>{technology.text}</p>
 )
 
-const buildPaperStyle = (technology) => {
-  if (technology.key % 2 === 0) {
+const buildPaperStyle = (technology, index) => {
+  if (index % 2 === 0) {
     return leftStyle
   } else {
     return rightStyle

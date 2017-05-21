@@ -1,17 +1,45 @@
+@import '../../../styles/variables/media';
+
 .ui.comments {
   margin: auto;
   text-align: left;
   padding-bottom: 5vh;
 }
 
-.ui.embed > img, .ui.embed > i, .ui.embed iframe {
-  width: 50vw !important;
-  height: 60vh !important;
+.ui.embed {
+  margin: auto;
+  background-color: inherit;
 }
 
-.ui.embed {
-  width: 50vw;
-  margin: auto;
-  padding-bottom: 65vh;
-  background-color: inherit;
+@media screen and (max-width: $mobile_max_width) {
+  .ui.embed {
+    width: 100vw;
+    padding-bottom: 50vh;
+    & > img, & > i, & iframe {
+      width: 100vw !important;
+      height: 45vh !important;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet_min_width) and (max-width: $tablet_max_width){
+  .ui.embed {
+    width: 75vw;
+    padding-bottom: 50vh;
+    & > img, & > i, & iframe {
+      width: 75vw !important;
+      height: 45vh !important;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop_min_width){
+  .ui.embed {
+    width: 50vw;
+    padding-bottom: 65vh;
+    & > img, & > i, & iframe {
+      width: 50vw !important;
+      height: 60vh !important;
+    }
+  }
 }

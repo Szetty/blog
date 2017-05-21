@@ -1,4 +1,17 @@
+@import '../../styles/variables/media';
+
 .route--active {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.ui.menu {
+  font-family: 'Old Standard TT', serif;
+  & .item,
+  & .ui.dropdown .menu>.item{
+    font-weight: bold!important;
+  }
+  @media screen and (min-width: $desktop_min_width) {
+    font-size: 18pt;
+  }
 }

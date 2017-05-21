@@ -1,0 +1,12 @@
+.ui.items>.item>.content>.header {
+  display: block;
+}
+
+.ui.header,
+.ui.items>.item>.content>.header {
+  font-family: 'Ubuntu', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.ui.items:first-child {
+  margin-top: 15px!important;
+}

@@ -1,0 +1,61 @@
+{
+  "maxRating": 5,
+  "watchMobileHeader": "How much I like to spectate it?",
+  "doMobileHeader": "How much I like to do it?",
+  "headers": [
+    "Name",
+    "How I rate it?",
+    "How much I like to spectate it?",
+    "How much I like to do it?"
+  ],
+  "hobbies": [
+    {
+      "name": "Pool",
+      "rating": 3,
+      "watch": 30,
+      "do": 40
+    },
+    {
+      "name": "Formula 1",
+      "rating": 4,
+      "watch": 75,
+      "do": 1
+    },
+    {
+      "name": "Football",
+      "rating": 5,
+      "watch": 65,
+      "do": 90
+    },
+    {
+      "name": "Tennis",
+      "rating": 4,
+      "watch": 50,
+      "do": 30
+    },
+    {
+      "name": "League of Legends",
+      "rating": 5,
+      "watch": 85,
+      "do": 85
+    },
+    {
+      "name": "Basketball",
+      "rating": 1,
+      "watch": 5,
+      "do": 5
+    },
+    {
+      "name": "Eating",
+      "rating": 3,
+      "watch": 15,
+      "do": 50
+    },
+    {
+      "name": "Bodybuilding",
+      "rating": 2,
+      "watch": 0,
+      "do": 25
+    }
+  ]
+}

@@ -1,4 +1,8 @@
 .breadcrumb {
   padding: 0;
   background-color: inherit;
+  &.ui {
+    margin-bottom: 20px!important;
+    margin-top: 5px!important;
+  }
 }

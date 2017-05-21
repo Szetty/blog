@@ -20,7 +20,8 @@ export const MobileHeader = ({ toggleMenu, searchClassName }, { store }) => (
 )
 
 const titleStyle = {
-  flex: '0 0 auto'
+  flex: '0 0 auto',
+  fontFamily: 'Old Standard TT, serif'
 }
 
 MobileHeader.propTypes = {

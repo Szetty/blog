@@ -3,5 +3,6 @@ export default {
   tablet: 1,
   mobile_and_tablet: 2,
   desktop: 3,
-  tablet_and_desktop:4
+  tablet_and_desktop: 4,
+  small: 5
 }

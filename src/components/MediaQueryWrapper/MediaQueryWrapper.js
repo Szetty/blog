@@ -35,6 +35,12 @@ const MediaQueryWrapper = ({ type, children }) => {
           {children}
         </MediaQuery>
       )
+    case MediaQueryTypes.small:
+      return (
+        <MediaQuery maxWidth={320}>
+          {children}
+        </MediaQuery>
+      )
   }
 }
 
